@@ -1,0 +1,27 @@
+Add : (FOR MIKROTIK PRODUCTS ONLY):::
+
+IDENT : Device.DeviceInfo.X_MIKROTIK_SystemIdentity
+Serial number: Device.DeviceInfo.SerialNumber
+Product class: Device.DeviceInfo.ProductClass
+Software version: Device.DeviceInfo.SoftwareVersion
+UPTIME : Device.DeviceInfo.UpTime
+E1 MAC: Device.Ethernet.Interface.1.MACAddress
+IP : Device.IP.Interface.1.IPv4Address.1.IPAddress
+MASK : Device.IP.Interface.1.IPv4Address.1.SubnetMask
+DHCP CLNT IP : Device.DHCPv4.Client.1.IPAddress
+DHCP CLNT MASK : Device.DHCPv4.Client.1.SubnetMask
+SSID : Device.WiFi.SSID.1.SSID
+PASS : Device.WiFi.AccessPoint.1.Security.KeyPassphrase
+WIFI Clients SSID 1 : Device.WiFi.AccessPoint.1.AssociatedDeviceNumberOfEntries
+SSID 2 : Device.WiFi.SSID.2.SSID
+PASS 2 : Device.WiFi.AccessPoint.2.Security.KeyPassphrase
+Wifi Clients : Device.WiFi.AccessPoint.2.AssociatedDeviceNumberOfEntries
+
+in the following files :
+genieacs-gui/config/index_parameters.yml
+genieacs-gui/config/summary_parameters.yml
+
+and then do a stop , start of the service by runing the scripts in the location of the installation folder:
+ /home/vns/genieacs-gui/genieacs-stop.sh
+ and
+ /home/vns/genieacs-gui/genieacs-start.sh
