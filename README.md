@@ -14,7 +14,7 @@ once done reboot by runing :
 "sudo reboot"
 
 # 2nd Step :
-copy the script code from https://github.com/skull-candy/genieacs/blob/master/genieacsautoinstallscript.sh
+Copy the script code from https://github.com/skull-candy/genieacs/blob/master/genieacsautoinstallscript.sh
 and open you fav. ssh client and connect to your server using the username and password you inserted during installation !
 
 # 3rd Step :
@@ -26,13 +26,14 @@ press CTRL + O and Press Enter to save the file
 then press CTRL + X to exit the editor
 
 # 4th Step:
-once out of the editor run the following command to make it executable :
+Once out of the editor run the following command to make it executable :
 "chmod +x script.sh" 
 and run the script :
 "sudo ./script.sh"
 and LET IT FINISH (PRESS Y (Case Sensitive) when promted during the installation.
 
 # 5th Step: 
+Now There Are Two Techniques to Acomplish This Step :
 Technique 1 :
 Start of the service by runing the scripts in the location of the installation folder:
 "sudo /home/**USERNAME**/genieacs-gui/genieacs-start.sh"
@@ -40,7 +41,7 @@ Start of the service by runing the scripts in the location of the installation f
 "sudo /home/**USERNAME**/genieacs-gui/genieacs-stop.sh"
 
 Technique 2 :
-or cd to the folder and run the scripts by :
+cd to the folder and run the scripts by :
 "cd /genieacs-gui/"
 To start the Service 
 "sudo ./genieacs-start.sh"
@@ -85,7 +86,7 @@ and now run :
 "sudo /home/**USERNAME**/genieacs-gui/genieacs-start.sh" to start the service again !
 
 Technique 2 :
-or cd to the folder and run the scripts :
+cd to the folder and run the scripts :
 "cd /genieacs-gui/"
 "sudo ./genieacs-stop.sh"
 and now run :
