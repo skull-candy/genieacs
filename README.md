@@ -135,6 +135,7 @@ it can be dome by adding the file type name in the "_form.html.erb"
 Update the file by runing the following :
 
 "sudo nano /genieacs-gui/app/views/files/_form.html.erb"
+
 Copy and paste the contents from the file : https://github.com/skull-candy/genieacs/blob/master/_form.html.erb to the text editor.
 
 Press CTRL + O and Press Enter to save the file
