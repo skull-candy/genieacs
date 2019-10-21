@@ -1,7 +1,7 @@
 <%= form_tag({:action => :upload}, :method => 'post', :multipart => true) do %>
 <div>
   <%= label_tag('file_type', 'File type:') %>
-  <%= select_tag('file_type', options_for_select(['1 Firmware Upgrade Image', '2 Web Content', '3 Vendor Configuration File', '4 Tone File', '5 Ringer File' , '6 MIKROTIK Factory Configuration File'], '1 Firmware Upgrade Image')) %>
+  <%= select_tag('file_type', options_for_select(['1 Firmware Upgrade Image', '2 Web Content', '3 Vendor Configuration File', '4 Tone File', '5 Ringer File' , 'X MIKROTIK Factory Configuration File'], '1 Firmware Upgrade Image')) %>
 </div>
 <div>
   <%= label_tag('oui', 'OUI:') %>
