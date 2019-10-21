@@ -126,11 +126,23 @@ Press CTRL + O and Press Enter to save the file
 then press CTRL + X to exit the editor
   
 TIP: config.json can be found in  : /usr/lib/node_modules/genieacs/config
-Now restart the Service by repeating Step # 8 .
+Now restart the Service by repeating Step # 8 to apply the changes.
 
-# 10th Step (OPTIONAL):
+# 11th Step (OPTIONAL):
 If you wish to overwrite default config script of the router with your own defualt config script that you want to apply after a reset , then you have to add a special file type to the Genieacs-gui.
-it can be dome by adding the file type name in the 
+it can be dome by adding the file type name in the "_form.html.erb"
+
+Update the file by runing the following :
+
+"sudo nano /genieacs-gui/app/views/files/_form.html.erb"
+Copy and paste the contents from the file : https://github.com/skull-candy/genieacs/blob/master/_form.html.erb to the text editor.
+
+Press CTRL + O and Press Enter to save the file
+then press CTRL + X to exit the editor
+
+Now restart the Service by repeating Step # 8 to apply the changes.
+
+TIP _form.html.erb: /home/**USERNAME**/genieacs-gui/app/views/files/
 
 # THE END !!!
 # Thank you For Reading And Following!
