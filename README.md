@@ -130,7 +130,7 @@ Once done , Press CTRL + O and Press Enter to save the file
 then press CTRL + X to exit the editor
 PRO-TIP : you can try rebooting the server using (sudo reboot) to verify if the above changes are correct and working for you.
 
-# 7th Step :
+# 9th Step :
 Open Browser and refresh the page or
 Point to: http://ServerIPAddress:3000 to open the GenieASC GUI Dashboard and log in:
 by the followings :
@@ -141,17 +141,17 @@ User login :
 username: user
 password: user
 
-# 8th Step :
+# 10th Step :
 Now enable the TR-096 in the Mikrotik Routers by 
 logging into the router via Winbox or ssh or telnet and
 run on the TERMINAL the following :
 "/tr069-client
 set acs-url=http://ServerIPAddress:7547 enabled=yes periodic-inform-interval=30s:"
 
-# 9th Step :
+# 11th Step :
 Your router should appear in the GenieASC GUI Dashboard give it some time to update the columns if they are blank or click on "show" then click on refresh to force refresh the columns and retrieve information from the router!
 
-# 10th Step : 
+# 12th Step : 
 Update Config.json according to your hostname or IP address of the server by running the following :
 
 "sudo nano /usr/lib/node_modules/genieacs/config/config.json"
@@ -166,7 +166,7 @@ then press CTRL + X to exit the editor
 PRO-TIP: config.json can be found in  : /usr/lib/node_modules/genieacs/config
 Now restart the Service by repeating Step # 8 to apply the changes.
 
-# 11th Step (OPTIONAL):
+# 13th Step (OPTIONAL):
 If you wish to overwrite default config script of the router with your own defualt config script that you want to apply after a reset , then you have to add a special file type to the Genieacs-gui.
 it can be dome by adding the file type name in the "_form.html.erb"
 
