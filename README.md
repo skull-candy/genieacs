@@ -117,11 +117,13 @@ cd to the folder to edit the scripts :
 when in the editor find the following lines and modify them accordingly :
 
   tmux send-keys 'cd genieacs-gui' 'C-m'
+  
   tmux send-keys 'rails server -b 0.0.0.0' 'C-m'
  
  to 
    
    tmux send-keys 'cd /home/**USERNAME**/genieacs-gui' 'C-m'
+   
    tmux send-keys 'sudo rails server -b 0.0.0.0' 'C-m'
 
 Once done , Press CTRL + O and Press Enter to save the file
