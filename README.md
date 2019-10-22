@@ -92,6 +92,42 @@ cd to the folder and run the scripts :
 and now run :
 "sudo ./genieacs-start.sh"
 
+# 8.5th Step (IMPORTANT BUT OPTIONAL STEP) :
+In order to make genieacs autostart when the server boots up  we need to add the genieacs-start.sh script pointer or command to the cron job list by adding its path by runing the following commands:
+
+"sudo crontab -e -u root"
+
+now in the end of the file add :
+
+"@reboot /home/**USERNAME**/genieacs-gui/genieacs-start.sh"
+
+Press CTRL + O and Press Enter to save the file
+then press CTRL + X to exit the editor
+
+Now we need to prepare the genieacs-start.sh script for root user , so the script and the gui will be accessible and executable by the root user by runing the following commands :
+
+Technique 1 :
+"sudo nano /home/**USERNAME**/genieacs-gui/genieacs-start.sh"
+
+Technique 2 :
+cd to the folder to edit the scripts :
+"cd /genieacs-gui/"
+"sudo nano /genieacs-start.sh"
+ 
+when in the editor find the following lines and modify them accordingly :
+
+  tmux send-keys 'cd genieacs-gui' 'C-m'
+  tmux send-keys 'rails server -b 0.0.0.0' 'C-m'
+ 
+ to 
+   
+   tmux send-keys 'cd /home/**USERNAME**/genieacs-gui' 'C-m'
+   tmux send-keys 'sudo rails server -b 0.0.0.0' 'C-m'
+
+Once done , Press CTRL + O and Press Enter to save the file
+then press CTRL + X to exit the editor
+PRO-TIP : you can try rebooting the server using (sudo reboot) to verify if the above changes are correct and working for you.
+
 # 7th Step :
 Open Browser and refresh the page or
 Point to: http://ServerIPAddress:3000 to open the GenieASC GUI Dashboard and log in:
@@ -125,7 +161,7 @@ Update Config.json according to your hostname or IP address of the server by run
 Press CTRL + O and Press Enter to save the file
 then press CTRL + X to exit the editor
   
-TIP: config.json can be found in  : /usr/lib/node_modules/genieacs/config
+PRO-TIP: config.json can be found in  : /usr/lib/node_modules/genieacs/config
 Now restart the Service by repeating Step # 8 to apply the changes.
 
 # 11th Step (OPTIONAL):
@@ -143,7 +179,7 @@ then press CTRL + X to exit the editor
 
 Now restart the Service by repeating Step # 8 to apply the changes.
 
-TIP _form.html.erb: /home/**USERNAME**/genieacs-gui/app/views/files/
+PRO-TIP _form.html.erb: /home/**USERNAME**/genieacs-gui/app/views/files/
 
 # THE END !!!
 # Thank you For Reading And Following!
