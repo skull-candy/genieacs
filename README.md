@@ -149,7 +149,8 @@ run on the TERMINAL the following :
 set acs-url=http://ServerIPAddress:7547 enabled=yes periodic-inform-interval=30s:"
 
 # 11th Step :
-Your router should appear in the GenieASC GUI Dashboard give it some time to update the columns if they are blank or click on "show" then click on refresh to force refresh the columns and retrieve information from the router!
+Your router should appear in the GenieASC GUI Dashboard give it some time to update the columns if they are blank:
+click on "show" then click on refresh to force refresh the columns and retrieve information from the router!
 
 # 12th Step : 
 Update Config.json according to your hostname or IP address of the server by running the following :
