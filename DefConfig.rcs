@@ -1,0 +1,38 @@
+{
+:local i 0
+#Number of interfaces. It is necessary to reconfigure this number for each device (/interface print count-only)
+:local x 2
+#Max time to wait
+:local t 10
+while ($i < $t && [:len [/interface find]] < $x) do={
+:put $i
+:set $i ($i + 1)
+:delay 1
+}
+if ($i = $t) do={
+:log warning message="Could not load all physical interfaces"
+} else={
+# PASTE SCRIPT HERE 
+/tr069-client
+set acs-url=http://192.168.254.21:7547 enabled=yes periodic-inform-interval=10s provisioning-code=AP-UP
+/ip firewall 
+    filter add chain=input action=accept connection-state=established,related comment="defconf: accept established,related"
+/interface wireless
+set [ find default-name=wlan1 ] ssid=MikroTik
+/interface pptp-client
+add connect-to=vpnserver.com disabled=no name=templink password=Templink user=Templink
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip hotspot profile
+set [ find default=yes ] html-directory=flash/hotspot
+/ip dhcp-client
+add dhcp-options=hostname,clientid disabled=no interface=ether1
+/system clock
+set time-zone-name=Asia/Dubai
+/system logging
+add topics=debug,tr069
+/tr069-client
+set acs-url=http://192.168.254.21:7547 enabled=yes periodic-inform-interval=10s provisioning-code=AP-UP
+/ip dhcp-client
+}
+}
