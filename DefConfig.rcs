@@ -1,3 +1,6 @@
+# Default Config FIle for Mikrotik CaP Lite AP 
+# Can be with any extension but .alter
+
 {
 :local i 0
 #Number of interfaces. It is necessary to reconfigure this number for each device (/interface print count-only)
