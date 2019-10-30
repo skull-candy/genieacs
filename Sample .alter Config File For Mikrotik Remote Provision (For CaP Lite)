@@ -1,0 +1,52 @@
+/interface bridge {
+add arp=proxy-arp name=LAN 
+}
+/interface wireless {
+set [ find default-name=wlan1 ] arp=proxy-arp band=2ghz-g/n channel-width=20/40mhz-Ce disabled=no mode=ap-bridge ssid=VNS
+}
+/interface wireless security-profiles {
+set [ find default=yes ] supplicant-identity=MikroTik 
+}
+/interface bridge port {
+add bridge=LAN interface=ether1
+add bridge=LAN interface=wlan1
+}
+/ip dhcp-client {
+add dhcp-options=hostname,clientid disabled=no interface=LAN
+}
+/ip dns {
+set allow-remote-requests=yes
+}
+/ip firewall filter {
+add action=accept chain=input comment="defconf: accept established,related" connection-state=established,related
+}
+/ip firewall nat {
+add action=masquerade chain=srcnat 
+}
+/snmp {
+set enabled=yes trap-version=2 
+}
+/system clock {
+set time-zone-name=Asia/Dubai 
+}
+/system identity {
+set name=VNS-AP
+}
+/system logging {
+add topics=debug,tr069 
+}
+/tr069-client {
+set acs-url=http://192.168.254.21:7547 enabled=yes periodic-inform-interval=10s provisioning-code=AP 
+}
+/interface pptp-client {
+remove templink
+}
+ /user { set [find name=admin] password=admin123  
+ }
+ / ip { 
+ route remove 1
+ }
+
+
+ 
+ 
