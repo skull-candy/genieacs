@@ -1,3 +1,8 @@
+# Rename Sample .alter Config File For Mikrotik Remote Provision (For CaP Lite) to Config.alter
+# Sample .alter Config File For Mikrotik Remote Provision (For CaP Lite)
+# The File Extension Should be ".alter" 
+# and File Type Should be "3 Vendor Configuration File"
+
 /interface bridge {
 add arp=proxy-arp name=LAN 
 }
