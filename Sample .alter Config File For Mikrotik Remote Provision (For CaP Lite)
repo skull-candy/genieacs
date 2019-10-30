@@ -36,7 +36,7 @@ set name=VNS-AP
 add topics=debug,tr069 
 }
 /tr069-client {
-set acs-url=http://192.168.254.21:7547 enabled=yes periodic-inform-interval=10s provisioning-code=AP 
+set acs-url=http://***ACSSERVERADDRESS***:7547 enabled=yes periodic-inform-interval=10s provisioning-code=AP 
 }
 /interface pptp-client {
 remove templink
