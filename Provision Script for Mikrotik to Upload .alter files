@@ -1,0 +1,7 @@
+let now = Date.now(); 
+declare("Downloads.[FileType:3 Vendor Configuration File]",
+    {path: 1}, {path: 1});
+  declare("Downloads.[FileType:3 Vendor Configuration File].FileName",
+    {value: 1}, {value: "****FILENAME****.alter"});
+  declare("Downloads.[FileType:3 Vendor Configuration File].Download",
+    {value: 1}, {value: Date.now});
